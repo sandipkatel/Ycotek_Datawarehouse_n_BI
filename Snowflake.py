@@ -45,7 +45,7 @@ def executemany(query, params):
     try:
         cs.execute(f"USE WAREHOUSE {DATA_WAREHOUSE}")
         cs.executemany(query, params)
-        # print(cs.fetchall())
+        print(cs.fetchall())
         Logger.log_message(f"query executed: {query}")
     except Exception as e:
         print(e, query)
@@ -69,3 +69,5 @@ def fetch_data(query):
 
 execute_query("USE DATABASE IOE")
 fetch_data("SHOW TABLES IN SCHEMA PUBLIC")
+execute_query("USE SCHEMA PUBLIC")
+executemany("INSERT INTO SALES (ID, NAME) VALUES (%s, %s)", [(1, 'Alice'), (2, 'Bob')])

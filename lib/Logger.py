@@ -25,7 +25,7 @@ class Logger:
         if log_file is None:
             Logger.log_initialize()
             log_file = v.get("log_file_handle")
-        msg = msg
+        msg = str(msg)
         # print(msg)
         log_file.write(str(now))
         log_file.write(": ")
