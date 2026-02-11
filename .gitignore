@@ -1,6 +1,9 @@
 # Logs
 *.log
 logs/
+log/
+*/logs/
+*/log/
 
 # Virtual environment
 .venv/
@@ -13,4 +16,4 @@ __pycache__/
 .pytest_cache/
 
 
-config.json
+*/config.json
